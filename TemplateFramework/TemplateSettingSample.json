@@ -1,0 +1,25 @@
+﻿[
+  {
+    "Name": "Sample",
+
+    // TemplateName and input config
+    "From": 
+      [
+        {
+          "Assembly": "F:\\Projects\\CodeGenerator\\ConsoleApplication1\\bin\\Debug\\SampleTemplateProject.dll",
+          "Templates": [ "SampleTemplateProject.Template.SampleTemplate1", "SampleTemplateProject.Template.SampleTemplate2" ],
+          "InputValue": { "Author": "Moudou", "ClassName": "AAA", "NamingSpace": "kkk.kkk" },
+          "InitValue": { },
+          "Injector": "Some object."
+        }
+      ],
+
+    // A Directory Path
+    "SaveTo":
+      "D:\\GoTest\\",
+    
+    // ZIP, "SOURCE" 
+    "SaveType":
+      "ZIP"
+  }
+]
