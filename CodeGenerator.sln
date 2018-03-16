@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateBase", "TemplateBase\TemplateBase.csproj", "{D392D971-E70B-4AD9-8366-CAB1B1ED5010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{EF9FE86D-A80F-47D5-988B-81496A42E1C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "ConsoleApplication1\ConsoleApplication.csproj", "{EF9FE86D-A80F-47D5-988B-81496A42E1C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateFramework", "TemplateFramework\TemplateFramework.csproj", "{93DB468F-64BA-425B-920F-EA49531938BD}"
 EndProject
