@@ -5,13 +5,15 @@ using System.Text;
 
 namespace TemplateFramework
 {
-    internal class FileSettingText
+    /// <summary>  </summary>
+    public class FileSettingText
     {
-        internal string Name { get; set; }
-        internal string SaveTo { get; set; }
+        public string Name { get; set; }
 
-        internal SaveType SaveType { get; set; }
+        public string SaveTo { get; set; }
 
-        internal List<InjectSettingText> InjectSettings { get; set; }
+        public SaveType SaveType { get; set; }
+
+        public List<InjectSettingText> InjectSettings { get; set; }
     }
 }

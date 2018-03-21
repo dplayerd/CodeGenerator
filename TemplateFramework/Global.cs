@@ -20,47 +20,47 @@ namespace TemplateFramework
 
 
         #region "config"
-        public static void setConfig(string ConfigText)
-        {
+        //public static void setConfig(string ConfigText)
+        //{
  
-        }
+        //}
 
 
-        static IEnumerable<string> loadConfigFile()
-        {
-            yield return "";
-        }
+        //static IEnumerable<string> loadConfigFile()
+        //{
+        //    yield return "";
+        //}
 
 
-        static IEnumerable<FileSettingText> readConfig(IEnumerable<string> ConfigContent)
-        {
-            var setting = new FileSettingText()
-            {
-                Name = "Sample",
+        //static IEnumerable<FileSettingText> readConfig(IEnumerable<string> ConfigContent)
+        //{
+        //    var setting = new FileSettingText()
+        //    {
+        //        Name = "Sample",
 
-                SaveTo = "D:\\GoGoGo\\Template\\",
+        //        SaveTo = "D:\\GoGoGo\\Template\\",
 
-                SaveType = SaveType.SourceText,
+        //        SaveType = SaveType.SourceText,
 
-                InjectSettings = new List<InjectSettingText>()
-                {
-                    new InjectSettingText() 
-                    {
-                        Assembly = @"F:\Projects\CodeGenerator\ConsoleApplication1\bin\Debug\SampleTemplateProject.dll",
-                        Templates = 
-                            "[ SampleTemplateProject.Template.SampleTemplate1, " + 
-                            "SampleTemplateProject.Template.SampleTemplate2 ]",
-                        InputValue = "{ Author: \"Moudou\" }",
-                        InitValue = "{ connectionstring: \"thisisaconnectionstring;gogogogogo;\" }",
-                        Injector = "SampleTemplateProject.Framework.DBInjector"
-                    }
-                }
-            };
+        //        InjectSettings = new List<InjectSettingText>()
+        //        {
+        //            new InjectSettingText() 
+        //            {
+        //                Assembly = @"F:\Projects\CodeGenerator\ConsoleApplication1\bin\Debug\SampleTemplateProject.dll",
+        //                Templates = 
+        //                    "[ SampleTemplateProject.Template.SampleTemplate1, " + 
+        //                    "SampleTemplateProject.Template.SampleTemplate2 ]",
+        //                InputValue = "{ Author: \"Moudou\" }",
+        //                InitValue = "{ connectionstring: \"thisisaconnectionstring;gogogogogo;\" }",
+        //                Injector = "SampleTemplateProject.Framework.DBInjector"
+        //            }
+        //        }
+        //    };
 
 
-            var retList = new List<FileSettingText>() { setting };
-            return retList;
-        }
+        //    var retList = new List<FileSettingText>() { setting };
+        //    return retList;
+        //}
         #endregion
 
 
@@ -164,12 +164,29 @@ namespace TemplateFramework
         static Dictionary<string, FileSettingText> dicSetting = new Dictionary<string, FileSettingText>();
 
 
-        public static void init()
+        //public static void init()
+        //{
+        //    var configContents = Global.loadConfigFile();
+        //    var list = Global.readConfig(configContents);
+
+        //    Global.init(list);
+        //}
+
+
+
+        //public static void init(IEnumerable<string> JsonConfigContent)
+        //{
+        //    var configs = Global.readConfig(JsonConfigContent);
+
+        //    Global.init(configs);
+        //}
+
+
+        public static void init(IEnumerable<FileSettingText> configs)
         {
-            var configContents = Global.loadConfigFile();
-            var list = Global.readConfig(configContents);
-            Global.reflect(list);
+            Global.reflect(configs);
         }
+
 
 
         public static void execute()

@@ -5,16 +5,16 @@ using System.Text;
 
 namespace TemplateFramework
 {
-    internal class InjectSettingText
+    public class InjectSettingText
     {
-        internal string Assembly { get; set; }
+        public string Assembly { get; set; }
 
-        internal string Templates { get; set; }
+        public string Templates { get; set; }
 
-        internal string InputValue { get; set; }
+        public string InputValue { get; set; }
 
-        internal string InitValue { get; set; }
+        public string InitValue { get; set; }
 
-        internal string Injector { get; set; }
+        public string Injector { get; set; }
     }
 }

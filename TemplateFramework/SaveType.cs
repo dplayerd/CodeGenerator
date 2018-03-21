@@ -5,9 +5,10 @@ using System.Text;
 
 namespace TemplateFramework
 {
-    internal enum SaveType
+    public enum SaveType
     {
         ZIP,
-        SourceText
+        SourceText,
+        PIPE
     }
 }
