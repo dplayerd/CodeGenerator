@@ -1,4 +1,4 @@
-﻿using Moudou.TemplateBase;
+﻿using Moudou.CodeGenerator.AbstractionClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +6,12 @@ using System.Text;
 
 namespace SampleTemplateProject.Framework
 {
-    public class DBInputValue : iInputValue
+    public class DBInputValue : IInputValue
     {
         public string Author { get; set; }
 
 
-        public void setValue(string SourceText)
+        public void SetValue(string SourceText)
         {
             this.Author = SourceText;
         }

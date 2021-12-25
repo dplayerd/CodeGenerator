@@ -56,13 +56,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Moudou.CodeGenerator.AbstractionClasses\Moudou.CodeGenerator.AbstractionClasses.csproj">
+      <Project>{6be6dee6-d174-474b-87ca-2fe1b7c57153}</Project>
+      <Name>Moudou.CodeGenerator.AbstractionClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SampleTemplateProject\SampleTemplateProject.csproj">
       <Project>{9be903b7-2780-4406-94d1-82eb8a6f7c1e}</Project>
       <Name>SampleTemplateProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TemplateBase\TemplateBase.csproj">
-      <Project>{d392d971-e70b-4ad9-8366-cab1b1ed5010}</Project>
-      <Name>TemplateBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\TemplateFramework\TemplateFramework.csproj">
       <Project>{93db468f-64ba-425b-920f-ea49531938bd}</Project>

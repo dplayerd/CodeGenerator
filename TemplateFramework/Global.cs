@@ -1,4 +1,4 @@
-﻿using Moudou.TemplateBase;
+﻿using Moudou.CodeGenerator.AbstractionClasses;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -84,7 +84,7 @@ namespace TemplateFramework
                     var assemblies = new Assembly[] { Assembly.LoadFile(path) };
 
 
-                    iInjector injectObj = Global.getTypedObject<iInjector>(assemblies, injSetting.Injector);
+                    IInjector injectObj = Global.getTypedObject<IInjector>(assemblies, injSetting.Injector);
 
                     if (injectObj == null)
                     {
@@ -95,12 +95,12 @@ namespace TemplateFramework
 
 
                     IEnumerable<string> aaa = injSetting.Templates.Trim('[', ']').Split(',').Select(obj => obj.Trim());
-                    List<iTemplate> templateList = new List<iTemplate>();
+                    List<ITemplate> templateList = new List<ITemplate>();
 
 
                     foreach (string templates in aaa)
                     {
-                        iTemplate template = Global.getTypedObject<iTemplate>(assemblies, templates);
+                        ITemplate template = Global.getTypedObject<ITemplate>(assemblies, templates);
 
                         if (template == null)
                         {
@@ -112,11 +112,11 @@ namespace TemplateFramework
                     }
 
 
-                    iInitValue initValue = injectObj.getInitValue();
-                    iInputValue inputValue = injectObj.getInputValue();
+                    IInitValue initValue = injectObj.GetInitValue();
+                    IInputValue inputValue = injectObj.GetInputValue();
 
-                    initValue.setValue(injSetting.InitValue);
-                    inputValue.setValue(injSetting.InputValue);
+                    initValue.SetValue(injSetting.InitValue);
+                    inputValue.SetValue(injSetting.InputValue);
 
 
 
@@ -157,10 +157,10 @@ namespace TemplateFramework
 
 
         #region "Framework"
-        static Dictionary<string, List<iTemplate>> dicTemplates = new Dictionary<string, List<iTemplate>>();
-        static Dictionary<string, iInputValue> dicInput = new Dictionary<string, iInputValue>();
-        static Dictionary<string, iInitValue> dicInit = new Dictionary<string, iInitValue>();
-        static Dictionary<string, iInjector> dicInject = new Dictionary<string, iInjector>();
+        static Dictionary<string, List<ITemplate>> dicTemplates = new Dictionary<string, List<ITemplate>>();
+        static Dictionary<string, IInputValue> dicInput = new Dictionary<string, IInputValue>();
+        static Dictionary<string, IInitValue> dicInit = new Dictionary<string, IInitValue>();
+        static Dictionary<string, IInjector> dicInject = new Dictionary<string, IInjector>();
         static Dictionary<string, FileSettingText> dicSetting = new Dictionary<string, FileSettingText>();
 
 
@@ -193,20 +193,20 @@ namespace TemplateFramework
         {
             foreach (string tmpName in dicInject.Keys)
             {
-                iInjector owner = dicInject[tmpName];
+                IInjector owner = dicInject[tmpName];
 
-                List<iTemplate> tmpList = dicTemplates[tmpName];
-                iInputValue inputVO = dicInput[tmpName];
-                iInitValue initVO = dicInit[tmpName];
+                List<ITemplate> tmpList = dicTemplates[tmpName];
+                IInputValue inputVO = dicInput[tmpName];
+                IInitValue initVO = dicInit[tmpName];
 
                 FileSettingText setting = dicSetting[tmpName];
 
 
-                owner.init(initVO);
-                owner.inject(inputVO, tmpList);
+                owner.Init(initVO);
+                owner.Inject(inputVO, tmpList);
 
 
-                foreach (iTemplate iTemp in tmpList)
+                foreach (ITemplate iTemp in tmpList)
                 {
                     string FileName = iTemp.GetType().ToString();
 

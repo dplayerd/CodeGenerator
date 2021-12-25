@@ -1,4 +1,4 @@
-﻿using Moudou.TemplateBase;
+﻿using Moudou.CodeGenerator.AbstractionClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,26 +6,26 @@ using System.Text;
 
 namespace SampleTemplateProject.Framework
 {
-    public class DBInjector : iInjector
+    public class DBInjector : IInjector
     {
-        public iInputValue getInputValue()
+        public IInputValue GetInputValue()
         {
             return new DBInputValue();
         }
 
-        public iInitValue getInitValue()
+        public IInitValue GetInitValue()
         {
             return new DBInitValue();
         }
 
 
-        public void init(iInitValue data)
+        public void Init(IInitValue data)
         {
         }
 
-        public void inject(iInputValue data, IEnumerable<iTemplate> templates)
+        public void Inject(IInputValue data, IEnumerable<ITemplate> templates)
         {
-            foreach (iTemplate tmp in templates)
+            foreach (ITemplate tmp in templates)
             {
                 if (tmp is SampleTemplateProject.Template.SampleTemplate1)
                 { 

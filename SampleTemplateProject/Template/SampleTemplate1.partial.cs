@@ -1,4 +1,4 @@
-﻿using Moudou.TemplateBase;
+﻿using Moudou.CodeGenerator.AbstractionClasses;
 using SampleTemplateProject.Framework;
 using System;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Text;
 
 namespace SampleTemplateProject.Template
 {
-    public partial class SampleTemplate1 : iTemplate
+    public partial class SampleTemplate1 : ITemplate
     {
-        public iInjector getInjector()
+        public IInjector GetInjector()
         {
             return new DBInjector();
         }
