@@ -215,6 +215,9 @@ namespace TemplateFramework
                     string directoryPath = setting.SaveTo;
                     string filePath = directoryPath + FileName;
 
+                    if (!Directory.Exists(directoryPath))
+                        Directory.CreateDirectory(directoryPath);
+
                     File.WriteAllText(filePath, writeContent);
                 }
             }

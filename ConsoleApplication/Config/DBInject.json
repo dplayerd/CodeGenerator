@@ -2,12 +2,13 @@
     "Name": "Sample",
     "SaveTo": "D:\\GoGoGo\\Template",
     "SaveType": "SourceText",
-    "InjectSettings": 
-    [{
-        "Assembly": "F:\\Projects\\CodeGenerator\\ConsoleApplication1\\bin\\Debug\\SampleTemplateProject.dll",
-        "Templates": "[ SampleTemplateProject.Template.SampleTemplate1, SampleTemplateProject.Template.SampleTemplate2 ]",
-        "InputValue": "{ Author: 'Moudou' }",
-        "InitValue": "{ connectionstring: 'thisisaconnectionstring;gogogogogo;' }",
-        "Injector": "SampleTemplateProject.Framework.DBInjector"
-    }]
+  "InjectSettings": [
+    {
+      "Assembly": "F:\\MyGitHubProjects\\CodeGenerator\\ConsoleApplication\\bin\\Debug\\SampleTemplateProject.dll",
+      "Templates": "[ SampleTemplateProject.Template.SampleTemplate1, SampleTemplateProject.Template.SampleTemplate2 ]",
+      "InputValue": "{ Author: 'Moudou' }",
+      "InitValue": "{ connectionstring: 'thisisaconnectionstring;gogogogogo;' }",
+      "Injector": "SampleTemplateProject.Framework.DBInjector"
+    }
+  ]
 }
