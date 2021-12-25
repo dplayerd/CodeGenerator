@@ -182,14 +182,14 @@ namespace TemplateFramework
         //}
 
 
-        public static void init(IEnumerable<FileSettingText> configs)
+        public static void Init(IEnumerable<FileSettingText> configs)
         {
             Global.reflect(configs);
         }
 
 
 
-        public static void execute()
+        public static void Execute()
         {
             foreach (string tmpName in dicInject.Keys)
             {

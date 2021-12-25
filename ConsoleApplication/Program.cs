@@ -13,8 +13,8 @@ namespace ConsoleApplication
     {
         static void Main(string[] args)
         {
-            var fileContents = Program.getFileContent(args);
-            var configs = Program.parseConfig(fileContents);
+            var fileContents = Program.GetFileContent(args);
+            var configs = Program.ParseConfig(fileContents);
 
 
             // check config file exist
@@ -26,18 +26,18 @@ namespace ConsoleApplication
 
 
             // init template framework 
-            TemplateFramework.Global.init(configs);
-            TemplateFramework.Global.execute();
+            TemplateFramework.Global.Init(configs);
+            TemplateFramework.Global.Execute();
 
 
             Console.WriteLine("Execute completed. Please press ENTER.");
         }
 
 
-        private static IEnumerable<string> getFileContent(IEnumerable<string> args)
+        private static IEnumerable<string> GetFileContent(IEnumerable<string> args)
         {
             // get config-file paths
-            IEnumerable<string> paths = PathHelper.getConfigPaths(args);
+            IEnumerable<string> paths = PathHelper.GetConfigPaths(args);
             
 
             foreach (string path in paths)
@@ -48,7 +48,7 @@ namespace ConsoleApplication
         }
 
 
-        private static IEnumerable<FileSettingText> parseConfig(IEnumerable<string> configContents)
+        private static IEnumerable<FileSettingText> ParseConfig(IEnumerable<string> configContents)
         {
             foreach(string configTxt in configContents)
             {

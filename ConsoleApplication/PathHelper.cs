@@ -8,7 +8,7 @@ namespace ConsoleApplication
 {
     internal class PathHelper
     {
-        internal static IEnumerable<string> getConfigPaths(IEnumerable<string> args)
+        internal static IEnumerable<string> GetConfigPaths(IEnumerable<string> args)
         {
             IEnumerable<string> paths = PathHelper.getInputFiles(args);
 
